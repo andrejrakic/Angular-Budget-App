@@ -1,0 +1,72 @@
+<div class="container">
+  <h1>
+    {{ detailedWallet.title }}
+  </h1>
+
+  <h1 class="text-center">
+    {{ detailedWallet.totalAmount | currency }}
+  </h1>
+
+  <div class="input-group mb-2 mr-sm-2">
+    <div class="col-auto">
+      <input
+        #title
+        type="text"
+        class="form-control"
+        id="inlineFormInput"
+        placeholder="Enter transaction ..."
+        (keydown.enter)="newTransaction(title.value, amount.value)"
+      />
+    </div>
+    <br />
+    <div class="input-group-prepend">
+      <div class="input-group-text">$</div>
+    </div>
+    <input
+      #amount
+      type="number"
+      class="form-control"
+      id="inlineFormInputGroupUsername2"
+      placeholder="Enter Amount..."
+      (keydown.enter)="newTransaction(title.value, amount.value)"
+    />
+    <div class="col-auto">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        (click)="newTransaction(title.value, amount.value)"
+      >
+        Enter
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h3>Incomes</h3>
+      <div *ngFor="let transaction of detailedWallet.listOfTransactions">
+        <div
+          class="alert alert-success"
+          role="alert"
+          *ngIf="transaction.amount > 0"
+        >
+          <p>{{ transaction.title }}</p>
+          <p>{{ transaction.amount | currency }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h3>Outcomes</h3>
+      <div *ngFor="let transaction of detailedWallet.listOfTransactions">
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngIf="transaction.amount < 0"
+        >
+          <p>{{ transaction.title }}</p>
+          <p>{{ transaction.amount | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

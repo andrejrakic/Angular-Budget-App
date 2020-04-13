@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 routerLink="/signup" class="text-right">Sign up</h2>
+  <h1 class="text-center">Budget App</h1>
+
+  <form #form="ngForm" (ngSubmit)="LogIn(form)">
+    <h2>Log in</h2>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        name="username"
+        class="form-control"
+        placeholder="Type your username..."
+        [(ngModel)]="userInput.username"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        class="form-control"
+        placeholder="Type your password..."
+        [(ngModel)]="userInput.password"
+      />
+    </div>
+    <button class="btn btn-primary">Log in</button>
+  </form>
+</div>

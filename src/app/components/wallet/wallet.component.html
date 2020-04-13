@@ -1,0 +1,7 @@
+<div class="alert alert-secondary" (click)="seeDetails(wallet)">
+  <!-- routerLink="/wallet" -->
+  <h2>
+    {{ wallet.title }}
+  </h2>
+  <p>Total amount: {{ wallet.totalAmount | currency }}</p>
+</div>
