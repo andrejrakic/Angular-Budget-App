@@ -1,6 +1,8 @@
 # Budget App
 
-![photo](https://angular.io/generated/images/guide/architecture/overview2.png)
+![angularconcept](https://angular.io/generated/images/guide/architecture/overview2.png)
+
+![ngrxstore](https://ngrx.io/generated/images/guide/store/state-management-lifecycle.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
