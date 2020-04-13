@@ -1,4 +1,4 @@
-import { User } from "src/app/models/user";
+import { User } from "src/app/models/User";
 import { Action } from "@ngrx/store";
 import { LOG_IN, LogIn } from "../actions/user.actions";
 
@@ -21,7 +21,7 @@ export default function userReducer(
       };
       return { ...state, user };
     }
-    default: 
+    default:
       return state;
   }
 }

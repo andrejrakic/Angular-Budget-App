@@ -4,7 +4,7 @@ import { WalletService } from "src/app/services/wallet.service";
 import { takeLast, first } from "rxjs/operators";
 import { Store, select } from "@ngrx/store";
 import { State } from "src/app/store";
-import { User } from "src/app/models/user";
+import { User } from "src/app/models/User";
 import { Observable } from "rxjs";
 import { Router } from "@angular/router";
 
@@ -18,9 +18,8 @@ export class MainPageComponent implements OnInit {
   loggedUser$: Observable<User>;
 
   constructor(
-    private walletService: WalletService
-  ) // private store: Store<State>,
-  // private router: Router
+    private walletService: WalletService // private store: Store<State>,
+  ) // private router: Router
   {
     //console.log(this.store.select((state) => state.loggedUser));
     // this.loggedUser$ = this.store.pipe(select("loggedUser"));

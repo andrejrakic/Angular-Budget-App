@@ -1,4 +1,4 @@
-import { User } from "../models/user";
+import { User } from "../models/User";
 import { ActionReducerMap } from "@ngrx/store";
 import userReducer from "./reducers/user.reducer";
 
