@@ -6,7 +6,9 @@
 
 ## Docs
 [Angular](https://angular.io/)
+
 [Ngrx](https://ngrx.io/)
+
 [RxJS](https://rxjs-dev.firebaseapp.com/)
 
 ## Development server
