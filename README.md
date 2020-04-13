@@ -1,5 +1,7 @@
 # BudgetApp
 
+[!photo]("https://angular.io/generated/images/guide/architecture/overview2.png")
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
 ## Development server
