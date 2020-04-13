@@ -3,8 +3,8 @@ import { Action } from "@ngrx/store";
 import { LOG_IN, LogIn } from "../actions/user.actions";
 
 const initialState: User = {
-  username: "test",
-  password: "test",
+  username: null,
+  password: null,
 };
 
 export default function userReducer(
@@ -21,9 +21,7 @@ export default function userReducer(
       };
       return { ...state, user };
     }
-    default: {
-      console.log(state);
+    default: 
       return state;
-    }
   }
 }
