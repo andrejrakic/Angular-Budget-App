@@ -18,22 +18,21 @@ export class MainPageComponent implements OnInit {
   loggedUser$: Observable<User>;
 
   constructor(
-    private walletService: WalletService // private store: Store<State>,
-  ) // private router: Router
-  {
+    private walletService: WalletService // private store: Store<State>, // private router: Router
+  ) {
     //console.log(this.store.select((state) => state.loggedUser));
     // this.loggedUser$ = this.store.pipe(select("loggedUser"));
     //this.loggedUser$ = this.store.select("loggedUser");
   }
 
   ngOnInit() {
-    this.wallets = this.walletService.getWallets();
-    // this.walletService
-    //   .getWalletsFromApi()
-    //   .pipe(first())
-    //   .subscribe((res) => {
-    //     //this.wallets = res;
-    //     console.log(res);
-    //   });
+    // this.wallets = this.walletService.getWallets();
+    this.walletService
+      .getWalletsFromApi()
+      //.pipe(first())
+      .subscribe((res) => {
+        this.wallets = res;
+        console.log(res);
+      });
   }
 }

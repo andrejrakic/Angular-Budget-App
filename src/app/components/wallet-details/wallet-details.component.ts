@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Wallet } from "src/app/models/Wallet";
 import { Transaction } from "src/app/models/Transaction";
 import { Router } from "@angular/router";
+import { WalletService } from "src/app/services/wallet.service";
 
 @Component({
   selector: "app-wallet-details",
@@ -10,7 +11,7 @@ import { Router } from "@angular/router";
 })
 export class WalletDetailsComponent implements OnInit {
   detailedWallet: Wallet;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private walletService: WalletService) {}
 
   ngOnInit() {
     console.log(history.state.wallet);
@@ -19,6 +20,11 @@ export class WalletDetailsComponent implements OnInit {
   }
 
   newTransaction(title: string, amount: number) {
+    this.walletService
+      .addTransaction(this.detailedWallet._id, new Transaction(title, amount))
+      .subscribe((res) => {
+        console.log("Subscribe", res);
+      });
     this.detailedWallet.listOfTransactions.push(new Transaction(title, amount));
     this.detailedWallet.totalAmount += Number(amount);
   }

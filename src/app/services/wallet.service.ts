@@ -26,8 +26,23 @@ export class WalletService {
   }
 
   getWalletsFromApi(): Observable<Wallet[]> {
-    return this.http.get<Wallet[]>(
-      "https://jsonplaceholder.typicode.com/todos"
+    return this.http.get<Wallet[]>("http://localhost:5000/getWallets");
+  }
+
+  addTransaction(
+    idWallet: string,
+    transaction: Transaction
+  ): Observable<Transaction> {
+    const toSend = {
+      idWallet: idWallet,
+      tsxTitle: transaction.title,
+      tsxAmount: transaction.amount,
+    };
+    console.log(toSend);
+    console.log(transaction.title);
+    return this.http.post<Transaction>(
+      "http://localhost:5000/addTransaction",
+      toSend
     );
   }
 }

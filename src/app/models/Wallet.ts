@@ -1,7 +1,7 @@
 import { Transaction } from "./Transaction";
 
 export class Wallet {
-  id?: string;
+  _id?: string;
   title: string;
   listOfTransactions: Transaction[];
   totalAmount: number;
